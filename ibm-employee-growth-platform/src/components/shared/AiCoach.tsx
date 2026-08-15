@@ -19,7 +19,7 @@ const SUGGESTIONS = [
 ];
 
 const FALLBACK =
-  "I can't reach the coaching service right now, but based on your profile your fastest win is Facilitation & Leadership (68 vs the 85 bar) — lead a cross-squad design workshop and log it. UX Research (74) is your next lever.";
+  "I can't reach the coaching service right now. The proxy server needs to be running locally with a valid ICA_API_KEY. Start it with: cd proxy && npm start. While offline, your profile shows Leadership (70) is the key gap to the Band 8 bar of 85 — leading a cross-squad workshop or owning a client outcome would move that needle fastest.";
 
 const AiCoach: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -45,7 +45,9 @@ const AiCoach: React.FC = () => {
     try {
       // Drop the synthetic greeting from what we send to the model.
       const history = nextHistory.filter((m, i) => !(i === 0 && m.role === 'assistant'));
-      const reply = ICA_ENABLED ? await chatWithCoach(history) : FALLBACK;
+      // Always attempt the proxy — ICA_ENABLED only gates background banner calls,
+      // not the interactive coach. Fall back to the static message on any failure.
+      const reply = await chatWithCoach(history);
       setMessages((prev) => [...prev, { role: 'assistant', content: reply }]);
     } catch {
       setMessages((prev) => [...prev, { role: 'assistant', content: FALLBACK }]);
