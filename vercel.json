@@ -1,0 +1,14 @@
+{
+  "buildCommand": "cd ibm-employee-growth-platform && npm install && npm run build",
+  "outputDirectory": "ibm-employee-growth-platform/build",
+  "framework": null,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "env": {
+    "REACT_APP_ICA_ENABLED": "false",
+    "REACT_APP_YL_ENABLED": "false",
+    "REACT_APP_YC_ENABLED": "false",
+    "REACT_APP_MYSCORE_ENABLED": "false"
+  }
+}
