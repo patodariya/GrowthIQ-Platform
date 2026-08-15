@@ -1,0 +1,26 @@
+@import '../../styles/variables';
+
+.log-modal {
+  &__hint {
+    font-size: 0.875rem;
+    color: $text-secondary;
+    margin: 0 0 $spacing-05 0;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-05;
+    margin: $spacing-05 0;
+  }
+
+  &__upload {
+    margin-top: $spacing-05;
+  }
+
+  &__files {
+    margin-top: $spacing-03;
+  }
+}
+
+// Made with Bob

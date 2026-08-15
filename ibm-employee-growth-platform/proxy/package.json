@@ -1,0 +1,13 @@
+{
+  "name": "ica-proxy",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Zero-dependency proxy that holds the ICA API key and adds CORS for the dashboard.",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

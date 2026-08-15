@@ -1,0 +1,32 @@
+@import '../../styles/variables';
+
+
+
+
+
+.contribution-chart {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: $spacing-05;
+
+    h3 {
+      
+      color: $text-primary;
+      margin: 0 0 $spacing-02 0;
+    }
+  }
+
+  &__subtitle {
+    
+    color: $text-secondary;
+    margin: 0;
+  }
+
+  &__graph {
+    margin-top: $spacing-05;
+  }
+}
+
+// Made with Bob

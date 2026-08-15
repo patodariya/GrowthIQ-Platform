@@ -1,0 +1,380 @@
+@import '../../styles/variables';
+
+// Set tab content background to white
+.cds--tabs--contained ~ .cds--tab-content {
+  background-color: white;
+}
+
+// Two-column layout for YourCareer section
+.career-roadmap__two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.career-roadmap {
+  // Intro row shares the content grid so the AI suggestion aligns exactly
+  // above the right column (matches Figma).
+  &__intro {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: $spacing-06;
+    align-items: start;
+    margin-bottom: $spacing-06;
+  }
+
+  &__intro-left {
+    align-self: center;
+  }
+
+  &__path {
+    font-size: 1.375rem;
+    font-weight: 400;
+    color: $text-primary;
+    margin: 0;
+
+    strong {
+      font-weight: 600;
+    }
+  }
+
+  &__eta {
+    font-size: 0.875rem;
+    color: $support-success;
+    margin: $spacing-02 0 0 0;
+  }
+
+  // Carbon Tile styled as the blue AI suggestion callout.
+  &__nudge {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-03;
+    padding: $spacing-04 $spacing-05;
+    background: #edf5ff;
+    border-left: 3px solid $interactive-01;
+    border-radius: 8px;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    color: $text-secondary;
+
+    svg {
+      color: $interactive-01;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+  }
+
+  &__section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $text-primary;
+    margin: 0 0 $spacing-05 0;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: $spacing-06;
+    align-items: start;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-06;
+    min-width: 0;
+  }
+
+  @media (max-width: 1056px) {
+    &__intro,
+    &__content {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// Quarterly progression
+.quarterly {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-05;
+
+  &__col {
+    padding: $spacing-05;
+    border: 1px solid $border-subtle-01;
+    border-radius: 8px;
+    background: #ffffff;
+
+    &--active {
+      border-color: $interactive-01;
+      background: #f4f8ff;
+    }
+  }
+
+  &__label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: $text-secondary;
+    margin: 0 0 $spacing-03 0;
+  }
+
+  &__value {
+    font-size: 2rem;
+    font-weight: 400;
+    color: $text-primary;
+    margin: 0;
+    line-height: 1;
+
+    &--sm {
+      font-size: 1.25rem;
+      margin-top: $spacing-04;
+    }
+  }
+
+  &__unit {
+    font-size: 0.75rem;
+    color: $text-secondary;
+    margin: $spacing-02 0 0 0;
+  }
+
+  &__note {
+    font-size: 0.8125rem;
+    color: $interactive-01;
+    margin: $spacing-04 0 0 0;
+  }
+
+  @media (max-width: 672px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Growth opportunities
+.opps {
+  &__head {
+    display: flex;
+    align-items: center;
+    gap: $spacing-03;
+    margin-bottom: $spacing-02;
+
+    .opps__icon {
+      color: $interactive-01;
+    }
+
+    .career-roadmap__section-title {
+      margin: 0;
+    }
+  }
+
+  &__subtitle {
+    font-size: 0.875rem;
+    color: $text-secondary;
+    margin: 0 0 $spacing-05 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-04;
+  }
+}
+
+.opp {
+  border: 1px solid $border-subtle-01;
+  border-radius: 8px;
+  padding: $spacing-05;
+  background: #ffffff;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: $spacing-03;
+    margin-bottom: $spacing-03;
+  }
+
+  &__tag {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: $interactive-01;
+    background: #edf5ff;
+    border-radius: 4px;
+    padding: 2px 8px;
+  }
+
+  &__match {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: $support-success;
+  }
+
+  &__title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: $text-primary;
+    margin: 0 0 $spacing-03 0;
+  }
+
+  &__desc {
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    color: $text-secondary;
+    margin: 0 0 $spacing-04 0;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__timing {
+    font-size: 0.75rem;
+    color: $text-helper;
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: $interactive-01;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Focus areas
+.focus {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-06;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: $spacing-03;
+  }
+
+  &__label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $text-primary;
+  }
+
+  &__gap {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: $support-error;
+  }
+
+  &__bar {
+    position: relative;
+    height: 6px;
+    background: $layer-01;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  &__fill {
+    height: 100%;
+    background: $interactive-01;
+    border-radius: 4px;
+  }
+
+  // Band 8 threshold marker at the far right of the track.
+  &__target {
+    position: absolute;
+    top: -2px;
+    right: 0;
+    width: 2px;
+    height: 10px;
+    background: $support-error;
+  }
+
+  &__action {
+    font-size: 0.8125rem;
+    color: $text-secondary;
+    margin: $spacing-03 0 0 0;
+  }
+}
+
+// Skills Development Section
+.career-roadmap__skills-section {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-06;
+}
+
+// Section demarcation styling - matches reference image
+.career-roadmap__section-group {
+  background: #f4f4f4;
+  border-radius: 4px;
+  padding: $spacing-06;
+  margin-bottom: $spacing-06;
+  
+  &-title {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $text-secondary;
+    margin: 0 0 $spacing-05 0;
+  }
+  
+  .dashboard-card {
+    background: #ffffff;
+    
+    &:not(:last-child) {
+      margin-bottom: $spacing-05;
+    }
+  }
+}
+
+.career-roadmap__skills-paths {
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $text-primary;
+    margin: 0 0 $spacing-03 0;
+  }
+}
+
+.career-roadmap__skills-subtitle {
+  font-size: 0.875rem;
+  color: $text-secondary;
+  margin: 0 0 $spacing-06 0;
+}
+
+.skills-paths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: $spacing-06;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Course grid for individual course cards
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: $spacing-05;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Made with Bob

@@ -1,0 +1,207 @@
+@import '../../styles/variables';
+
+.my-contributions {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: $spacing-05;
+    margin-bottom: $spacing-05;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $text-primary;
+    margin: 0;
+  }
+
+  &__subtitle {
+    font-size: 0.875rem;
+    color: $text-secondary;
+    margin: $spacing-02 0 0 0;
+  }
+
+  &__filters {
+    display: flex;
+    align-items: center;
+    gap: $spacing-04;
+    margin-bottom: $spacing-05;
+    flex-wrap: wrap;
+  }
+
+  &__search {
+    flex: 1;
+    min-width: 240px;
+  }
+
+  &__dropdowns {
+    display: flex;
+    align-items: center;
+    gap: $spacing-03;
+    flex-shrink: 0;
+
+    // Make Carbon dropdowns compact and consistent width
+    .cds--dropdown {
+      width: 168px;
+      background: #ffffff;
+      border-bottom-color: $border-subtle-01;
+    }
+  }
+
+  &__filter-label {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-02;
+    color: $text-secondary;
+    position: relative;
+
+    svg {
+      fill: $text-secondary;
+    }
+  }
+
+  &__filter-count {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: $interactive-01;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  // Gray rounded card wrapping the table (matches the app's card treatment).
+  &__table {
+    overflow: hidden;
+
+    .cds--data-table {
+      background: transparent;
+    }
+
+    // Header row
+    .cds--data-table thead tr {
+      background: #ffffff;
+    }
+    .cds--data-table th {
+      background: #ffffff;
+      border-top: none;
+    }
+
+    // Body rows sit on the gray card; add breathing room.
+    .cds--data-table td {
+      background: transparent;
+      vertical-align: middle;
+      padding-top: $spacing-04;
+      padding-bottom: $spacing-04;
+    }
+  }
+
+  &__empty {
+    padding: $spacing-06;
+    text-align: center;
+    color: $text-secondary;
+    font-size: 0.875rem;
+  }
+}
+
+.cell-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $text-primary;
+  margin: 0;
+}
+
+.cell-evidence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-03;
+  margin-top: $spacing-03;
+}
+
+.evidence-chip {
+  font-size: 0.6875rem;
+  font-family: 'IBM Plex Mono', monospace;
+  color: $text-secondary;
+  background: #ffffff;
+  border: 1px solid $border-subtle-01;
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+
+.cell-date {
+  font-size: 0.8125rem;
+  color: $text-secondary;
+  white-space: nowrap;
+}
+
+.impact {
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  &--critical {
+    color: $support-error;
+  }
+  &--high {
+    color: $interactive-01;
+  }
+  &--medium {
+    color: $text-secondary;
+  }
+  &--low {
+    color: $text-helper;
+  }
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 3px 10px;
+  white-space: nowrap;
+
+  &--verified {
+    color: #0e6027;
+    background: #defbe6;
+
+    svg {
+      fill: #24a148;
+    }
+  }
+
+  &--pending {
+    color: #8a6d00;
+    background: #fcf4d6;
+
+    svg {
+      fill: #b28600;
+    }
+  }
+}
+
+// Log-contribution modal
+.modal-hint {
+  font-size: 0.875rem;
+  color: $text-secondary;
+  margin: 0 0 $spacing-05 0;
+}
+
+.modal-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-05;
+  margin: $spacing-05 0;
+}
+
+// Made with Bob

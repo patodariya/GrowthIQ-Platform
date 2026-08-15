@@ -141,3 +141,22 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# dotenv — root and all subdirectories
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+**/.env
+**/.env.local
+**/.env.*.local
+**/.env.development
+**/.env.production
+
+# Secrets — all subdirectories (belt-and-suspenders)
+**/.env
+**/.env.local
+**/.env.*.local
+**/.env.development
+**/.env.production

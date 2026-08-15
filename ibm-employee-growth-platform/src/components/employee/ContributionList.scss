@@ -1,0 +1,92 @@
+@import '../../styles/variables';
+
+@import '../../styles/variables';
+
+.contribution-list {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-05;
+
+    h3 {
+      
+      color: $text-primary;
+      margin: 0;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-05;
+  }
+}
+
+.contribution-item {
+  display: flex;
+  gap: $spacing-04;
+  padding: $spacing-04 0;
+  border-bottom: 1px solid $border-subtle-01;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $interactive-01;
+    margin-top: $spacing-02;
+    flex-shrink: 0;
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-03;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: $spacing-04;
+  }
+
+  &__title {
+    
+    color: $text-primary;
+    margin: 0;
+    flex: 1;
+  }
+
+  &__verified {
+    display: flex;
+    align-items: center;
+    gap: $spacing-02;
+    color: $support-success;
+    font-size: 0.75rem;
+    white-space: nowrap;
+
+    svg {
+      fill: $support-success;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: $spacing-03;
+    flex-wrap: wrap;
+  }
+
+  &__date {
+    
+    color: $text-secondary;
+  }
+}
+
+// Made with Bob

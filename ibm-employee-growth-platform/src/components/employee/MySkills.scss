@@ -1,0 +1,222 @@
+@import '../../styles/variables';
+
+.my-skills {
+  width: 100%;
+  
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.skill-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+  
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  
+  &__title-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+  }
+  
+  &__name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #161616;
+  }
+  
+  &__subtitle {
+    font-size: 0.875rem;
+    color: #525252;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  
+  &__proficiency {
+    width: 100%;
+  }
+  
+  &__slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+  }
+  
+  &__slider-container {
+    flex: 1;
+    max-width: 600px;
+    position: relative;
+  }
+  
+  &__slider {
+    width: 100%;
+    height: 4px;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #0f62fe 0%, #0f62fe 60%, #e0e0e0 60%, #e0e0e0 100%);
+    
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    // Webkit (Chrome, Safari, Edge)
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #0f62fe;
+      cursor: pointer;
+      border: 2px solid #ffffff;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+      transition: transform 0.15s ease;
+      margin-top: -6px; // Center the thumb on the track (16px thumb - 4px track) / 2
+      
+      &:hover {
+        transform: scale(1.2);
+      }
+      
+      &:active {
+        transform: scale(1.1);
+      }
+    }
+    
+    // Firefox
+    &::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #0f62fe;
+      cursor: pointer;
+      border: 2px solid #ffffff;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+      transition: transform 0.15s ease;
+      
+      &:hover {
+        transform: scale(1.2);
+      }
+      
+      &:active {
+        transform: scale(1.1);
+      }
+    }
+    
+    // Track styling with gradient
+    &::-webkit-slider-runnable-track {
+      height: 4px;
+      border-radius: 2px;
+      background: transparent;
+    }
+    
+    &::-moz-range-track {
+      height: 4px;
+      border-radius: 2px;
+      background: linear-gradient(to right, #0f62fe 0%, #0f62fe 60%, #e0e0e0 60%, #e0e0e0 100%);
+      border: none;
+    }
+    
+    // Update gradient based on value using JavaScript
+    &[value="0"] {
+      background: linear-gradient(to right, #e0e0e0 0%, #e0e0e0 100%);
+    }
+    &[value="1"] {
+      background: linear-gradient(to right, #0f62fe 0%, #0f62fe 20%, #e0e0e0 20%, #e0e0e0 100%);
+    }
+    &[value="2"] {
+      background: linear-gradient(to right, #0f62fe 0%, #0f62fe 40%, #e0e0e0 40%, #e0e0e0 100%);
+    }
+    &[value="3"] {
+      background: linear-gradient(to right, #0f62fe 0%, #0f62fe 60%, #e0e0e0 60%, #e0e0e0 100%);
+    }
+    &[value="4"] {
+      background: linear-gradient(to right, #0f62fe 0%, #0f62fe 80%, #e0e0e0 80%, #e0e0e0 100%);
+    }
+    &[value="5"] {
+      background: linear-gradient(to right, #0f62fe 0%, #0f62fe 100%);
+    }
+  }
+  
+  &__scale-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    padding: 0 2px;
+    
+    span {
+      font-size: 0.75rem;
+      color: #525252;
+      width: 20px;
+      text-align: center;
+    }
+  }
+  
+  &__level-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 200px;
+  }
+  
+  &__level-value {
+    font-size: 0.875rem;
+    color: #161616;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  
+  &__inferred {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    color: #525252;
+    white-space: nowrap;
+    
+    svg {
+      flex-shrink: 0;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .skill-item {
+    &__slider-container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    
+    &__slider-wrapper {
+      max-width: 100%;
+    }
+    
+    &__level-info {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}
+
+// Made with Bob

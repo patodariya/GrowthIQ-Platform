@@ -1,0 +1,41 @@
+@import '../../styles/variables';
+
+.career-trend {
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: $spacing-04;
+    margin-bottom: $spacing-05;
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: $text-primary;
+      margin: 0;
+    }
+  }
+
+  &__subtitle {
+    font-size: 0.875rem;
+    color: $text-secondary;
+    margin: $spacing-02 0 0 0;
+  }
+
+  &__band {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: $interactive-01;
+    background: #edf5ff;
+    border-radius: 12px;
+    padding: 4px 10px;
+    white-space: nowrap;
+  }
+
+  &__chart {
+    width: 100%;
+  }
+}
+
+// Made with Bob

@@ -1,0 +1,109 @@
+.myscore-card {
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #161616;
+    margin: 0;
+  }
+
+  &__source {
+    font-size: 0.75rem;
+    color: #6f6f6f;
+    margin: 0.125rem 0 0;
+  }
+
+  &__figures {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  &__chart {
+    margin-bottom: 1rem;
+  }
+
+  &__chart-title,
+  &__exp-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: #6f6f6f;
+    margin: 0 0 0.5rem;
+  }
+
+  &__expectations ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__expectations li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8125rem;
+    color: #393939;
+    padding: 0.375rem 0;
+    border-bottom: 1px solid #f0f0f0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.myscore-figure {
+  padding: 0.75rem;
+  background: #f4f4f4;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+
+  &__value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #161616;
+  }
+
+  &__up {
+    color: #24a148;
+    font-size: 0.875rem;
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    color: #393939;
+    margin-top: 0.25rem;
+  }
+
+  &__sub {
+    font-size: 0.6875rem;
+    color: #8d8d8d;
+    margin-top: 0.0625rem;
+  }
+}
+
+.myscore-exp__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 600;
+  color: #6f6f6f;
+
+  &.is-met {
+    color: #0f8a5f;
+  }
+}

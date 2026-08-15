@@ -1,0 +1,22 @@
+@import '../../styles/variables';
+
+.skill-radar {
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $text-primary;
+    margin: 0 0 $spacing-02 0;
+  }
+
+  &__subtitle {
+    font-size: 0.875rem;
+    color: $text-secondary;
+    margin: 0 0 $spacing-03 0;
+  }
+
+  &__chart {
+    width: 100%;
+  }
+}
+
+// Made with Bob

@@ -1,0 +1,110 @@
+.learning-card {
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #161616;
+    margin: 0;
+  }
+
+  &__source {
+    font-size: 0.75rem;
+    color: #6f6f6f;
+    margin: 0.125rem 0 0;
+  }
+
+  &__think40 {
+    margin-bottom: 1.25rem;
+  }
+
+  &__think40-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    font-size: 0.8125rem;
+    color: #525252;
+    margin-bottom: 0.5rem;
+
+    strong {
+      color: #161616;
+      font-weight: 600;
+    }
+  }
+
+  &__met {
+    color: #0f8a5f;
+    font-weight: 600;
+  }
+
+  &__bar {
+    height: 8px;
+    border-radius: 4px;
+    background: #e0e0e0;
+    overflow: hidden;
+  }
+
+  &__bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: #0f62fe;
+    transition: width 0.4s ease;
+
+    &.is-met {
+      background: #24a148;
+    }
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+}
+
+.learning-stat {
+  display: flex;
+  gap: 0.625rem;
+  padding: 0.75rem;
+  background: #f4f4f4;
+  border-radius: 6px;
+
+  &__icon {
+    color: #0f62fe;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  &__value {
+    font-size: 1.375rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #161616;
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    color: #393939;
+    margin-top: 0.125rem;
+  }
+
+  &__sub {
+    font-size: 0.6875rem;
+    color: #8d8d8d;
+    margin-top: 0.0625rem;
+  }
+}

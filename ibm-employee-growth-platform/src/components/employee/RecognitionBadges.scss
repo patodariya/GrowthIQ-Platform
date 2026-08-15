@@ -1,0 +1,344 @@
+@import '../../styles/variables';
+
+// ── Tab wrapper ──────────────────────────────────────────────────────────────
+
+.recognition-tab {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-06;
+
+  &__subtitle {
+    font-size: 0.875rem;
+    color: $text-secondary;
+    margin: $spacing-02 0 $spacing-06 0;
+  }
+
+  &__section-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: $text-primary;
+    margin: 0 0 $spacing-02 0;
+  }
+
+  // ── Row 1: stat strip ──────────────────────────────────────────────────
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacing-05;
+
+    @media (max-width: 1056px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // ── Row 2: full-width feed tile ────────────────────────────────────────
+
+  &__feed-tile {
+    // Already full width; just give it room to breathe
+  }
+
+  // ── Row 3: badges + give-recognition side by side ─────────────────────
+
+  &__bottom {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: $spacing-06;
+    align-items: start;
+
+    @media (max-width: 1056px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// ── Stat cards ───────────────────────────────────────────────────────────────
+
+.rec-stat {
+  display: flex;
+  align-items: center;
+  gap: $spacing-04;
+  padding: $spacing-05;
+  background: $layer-01;
+  border: 1px solid $border-subtle-01;
+  border-radius: 8px;
+
+  &__icon {
+    flex-shrink: 0;
+
+    &--green { fill: #0e6027; }
+    &--blue  { fill: #0043ce; }
+    &--purple { fill: #6929c4; }
+    &--gold  { fill: #f1c21b; }
+  }
+
+  &__value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $text-primary;
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    color: $text-secondary;
+    margin: 0.15rem 0 0 0;
+  }
+}
+
+// ── Full-width feed ───────────────────────────────────────────────────────────
+
+.recognition-feed {
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $spacing-05;
+  }
+
+  &__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: $text-primary;
+    margin: 0;
+  }
+
+  &__points-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #0043ce;
+    background: #edf5ff;
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  &__loading,
+  &__empty {
+    font-size: 0.8125rem;
+    color: $text-secondary;
+    margin: 0;
+    padding: $spacing-04 0;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: $spacing-04;
+    margin-top: $spacing-04;
+    border-top: 1px solid $border-subtle-01;
+  }
+
+  &__count {
+    font-size: 0.8125rem;
+    color: $text-secondary;
+  }
+
+  &__view-all {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #0043ce;
+    text-decoration: none;
+    margin-left: auto;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__list {
+    display: grid;
+    // Two-column feed so all items are visible at a glance
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-05;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// ── Individual feed item ──────────────────────────────────────────────────────
+
+.rec-feed-item {
+  display: flex;
+  gap: $spacing-04;
+  padding: $spacing-05;
+  background: $layer-01;
+  border: 1px solid $border-subtle-01;
+  border-radius: 8px;
+
+  &__avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: $text-on-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  &__body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: $spacing-02;
+    flex-wrap: wrap;
+    margin-bottom: $spacing-02;
+  }
+
+  &__from {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: $text-primary;
+  }
+
+  &__manager-tag {
+    // Carbon Tag is already sized; just ensure alignment
+    flex-shrink: 0;
+  }
+
+  &__date {
+    font-size: 0.75rem;
+    color: $text-secondary;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: $spacing-03;
+    margin-bottom: $spacing-02;
+  }
+
+  &__type-tag {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    padding: 0.125rem 0.5rem;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  &__points {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #0f62fe;
+  }
+
+  &__message {
+    font-size: 0.8125rem;
+    color: $text-secondary;
+    margin: 0;
+    font-style: italic;
+    line-height: 1.45;
+    // Clamp long messages so the card height stays consistent
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// ── Badge grid ───────────────────────────────────────────────────────────────
+
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-05;
+
+  @media (max-width: 672px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.badge {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: $spacing-06 $spacing-05;
+  background: #ffffff;
+  border: 1px solid $border-subtle-01;
+  border-radius: 8px;
+  min-height: 148px;
+
+  &__check {
+    position: absolute;
+    top: $spacing-04;
+    right: $spacing-04;
+    fill: $support-success;
+  }
+
+  &__emoji {
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: $spacing-04;
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $text-primary;
+    margin: 0 0 $spacing-02 0;
+  }
+
+  &__status {
+    font-size: 0.75rem;
+    color: $text-secondary;
+    margin: 0;
+  }
+
+  &--locked {
+    border-style: dashed;
+    background: $layer-01;
+
+    .badge__emoji {
+      filter: grayscale(1);
+      opacity: 0.45;
+    }
+    .badge__title {
+      color: $text-helper;
+    }
+    .badge__status {
+      color: $text-helper;
+    }
+  }
+}
+
+// ── Give Recognition form ────────────────────────────────────────────────────
+
+.give-recognition {
+  &__message {
+    margin-top: $spacing-05;
+  }
+
+  &__send {
+    margin-top: $spacing-05;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &__toast {
+    margin-bottom: $spacing-05;
+    max-width: 100%;
+  }
+}
+
+// Made with Bob

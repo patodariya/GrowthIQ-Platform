@@ -1,0 +1,145 @@
+@import './styles/variables';
+
+// When a report modal is open and the user hits "Download PDF", print only the
+// report content (charts included). The `downloadReport()` helper calls
+// window.print(); this stylesheet isolates the open Carbon modal.
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  // Isolate exactly the employee report modal — the specific class prevents
+  // other open modals from also becoming visible and duplicating pages.
+  .report-modal .cds--modal-container,
+  .report-modal .cds--modal-container * {
+    visibility: visible !important;
+  }
+  .report-modal .cds--modal-container {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+  }
+  .report-modal {
+    background: #ffffff !important;
+  }
+  // Hide close button, modal header actions, and the on-screen action bar.
+  .cds--modal-close,
+  .cds--modal-header,
+  .no-print {
+    display: none !important;
+  }
+}
+
+.app {
+  min-height: 100vh;
+  background: #ffffff;
+
+  &__content {
+    padding-top: 3rem; // Carbon header height (48px)
+    min-height: calc(100vh - 3rem);
+  }
+}
+
+// Shared page layout: a full-bleed gray band behind the page title (matches
+// Figma), and a centered, padded body for the rest of the content. Both keep
+// their inner content aligned to the same 1440px max-width column.
+.page-header {
+  background: $layer-01;
+
+  &__inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: $spacing-06 $spacing-07;
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $text-secondary;
+    margin: 0 0 $spacing-02 0;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.25;
+    color: $text-primary;
+    margin: 0 0 $spacing-03 0;
+  }
+
+  &__subtitle {
+    font-size: 0.875rem;
+    color: $text-secondary;
+    margin: 0;
+  }
+}
+
+.page-body {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: $spacing-06 $spacing-07;
+}
+
+// --- Consistent buttons across the portal ---
+// Carbon buttons default to different heights per size and pin renderIcon to
+// the far right with a large trailing pad. Normalise to one clean height with
+// balanced padding and the icon flowing next to the label.
+.cds--btn {
+  min-block-size: 2.5rem;
+  align-items: center;
+  column-gap: $spacing-03;
+}
+.cds--btn:not(.cds--btn--icon-only) {
+  padding-block: 0;
+  padding-inline: $spacing-05;
+
+  .cds--btn__icon {
+    position: static;
+    margin: 0;
+    inset: auto;
+    flex-shrink: 0;
+  }
+}
+.cds--btn--icon-only {
+  min-block-size: 2.5rem;
+  min-inline-size: 2.5rem;
+  inline-size: 2.5rem;
+}
+
+// --- Shared underline tabs (used by both the employee and manager views) ---
+.gtabs {
+  display: flex;
+  gap: $spacing-06;
+  margin-bottom: $spacing-06;
+  border-bottom: 1px solid $border-subtle-01;
+
+  &__btn {
+    background: none;
+    border: none;
+    padding: $spacing-04 0;
+    margin-bottom: -1px;
+    font-size: 0.875rem;
+    color: $text-secondary;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: $text-primary;
+    }
+
+    &.active {
+      color: $text-primary;
+      font-weight: 600;
+      border-bottom-color: $interactive-01;
+    }
+  }
+}
+
+// Made with Bob

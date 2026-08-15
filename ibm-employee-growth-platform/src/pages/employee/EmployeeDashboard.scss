@@ -1,0 +1,197 @@
+@import '../../styles/variables';
+
+
+
+
+
+.employee-dashboard {
+  &__ai-summary {
+    margin-bottom: $spacing-06;
+    padding: $spacing-05 $spacing-06;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $spacing-05;
+    background: #262626;
+    border-radius: 8px;
+  }
+
+  &__metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacing-05;
+    margin-bottom: $spacing-06;
+  }
+
+  &__content-tabs {
+    display: flex;
+    gap: $spacing-03;
+    margin-bottom: $spacing-06;
+    padding-bottom: $spacing-03;
+    border-bottom: 1px solid $border-subtle-01;
+
+    .cds--btn--ghost.active {
+      border-bottom: 2px solid $interactive-01;
+      color: $text-primary;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 11fr 5fr;
+    gap: $spacing-06;
+    align-items: start;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-06;
+    min-width: 0; // let children shrink instead of overflowing the column
+  }
+
+  // Tablet: stack the two content columns; metrics go 2-up.
+  @media (max-width: 1056px) {
+    &__content {
+      grid-template-columns: 1fr;
+    }
+    &__metrics {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  // Phone: single column everywhere.
+  @media (max-width: 672px) {
+    &__metrics {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.ai-summary {
+  &__content {
+    display: flex;
+    gap: $spacing-05;
+    flex: 1;
+    align-items: flex-start;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background: $interactive-01;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  &__text {
+    flex: 1;
+  }
+
+  &__title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #c6c6c6;
+    margin: 0 0 $spacing-03 0;
+  }
+
+  &__description {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: #f4f4f4;
+    margin: 0;
+  }
+}
+
+.dashboard-card {
+  background: $layer-01;
+  border-radius: 8px;
+}
+
+.career-nudge {
+  display: flex;
+  gap: $spacing-04;
+  padding: $spacing-05;
+  background: #edf5ff;
+  border-left: 3px solid $interactive-01;
+  border-radius: 8px;
+
+  &__icon {
+    color: $interactive-01;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $interactive-01;
+    margin: 0 0 $spacing-03 0;
+  }
+
+  &__message {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: $text-secondary;
+    margin: 0;
+  }
+}
+
+// Monthly growth report modal
+.report-modal {
+  &__summary {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: $text-primary;
+    margin: 0 0 $spacing-05 0;
+  }
+
+  &__h {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $text-secondary;
+    margin: $spacing-05 0 $spacing-03 0;
+  }
+
+  &__dims {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-03;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: $spacing-03 $spacing-04;
+      background: $layer-01;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      color: $text-secondary;
+
+      strong {
+        color: $text-primary;
+      }
+    }
+  }
+
+  &__note {
+    font-size: 0.875rem;
+    line-height: 1.45;
+    color: $text-secondary;
+    margin: 0;
+  }
+}
+
+// Made with Bob

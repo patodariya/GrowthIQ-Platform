@@ -1,0 +1,230 @@
+@import '../../styles/variables';
+
+.recognition-inbox {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: $spacing-05;
+    gap: $spacing-04;
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: $text-primary;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: $spacing-03;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-03;
+    flex-shrink: 0;
+  }
+
+  &__badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: $interactive-01;
+    border-radius: 12px;
+    padding: 1px 8px;
+    line-height: 1.5;
+  }
+
+  &__subtitle {
+    font-size: 0.875rem;
+    color: $text-secondary;
+    margin: $spacing-02 0 0 0;
+  }
+
+  &__empty {
+    font-size: 0.875rem;
+    color: $text-secondary;
+    padding: $spacing-05 0;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-05;
+  }
+}
+
+.detected-item {
+  border: 1px solid $border-subtle-01;
+  border-radius: 8px;
+  padding: $spacing-05;
+  background: #ffffff;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: $spacing-03;
+    flex-wrap: wrap;
+    margin-bottom: $spacing-03;
+  }
+
+  &__meta {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-02;
+    flex-wrap: wrap;
+    background: #f4f6fb;
+    border-radius: 6px;
+    padding: 4px 10px;
+  }
+
+  &__meta-from {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: $text-primary;
+  }
+
+  &__meta-channel {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #0043ce;
+    background: #edf5ff;
+    border-radius: 4px;
+    padding: 1px 6px;
+    letter-spacing: 0.01em;
+  }
+
+  &__meta-date {
+    font-size: 0.75rem;
+    color: $text-helper;
+
+    &::before {
+      content: '·';
+      margin-right: $spacing-02;
+      color: $border-subtle-01;
+    }
+  }
+
+  &__ai {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $interactive-01;
+    background: #edf5ff;
+    border-radius: 4px;
+    padding: 1px 6px;
+    margin-left: auto;
+
+    &--edited {
+      color: #0e6027;
+      background: #defbe6;
+    }
+  }
+
+  &__edit {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-04;
+    margin: $spacing-03 0 $spacing-04 0;
+  }
+
+  &__edit-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-04;
+  }
+
+  &__title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: $text-primary;
+    margin: 0 0 $spacing-03 0;
+  }
+
+  &__tags {
+    display: flex;
+    gap: $spacing-03;
+    flex-wrap: wrap;
+    margin-bottom: $spacing-03;
+  }
+
+  &__summary {
+    font-size: 0.875rem;
+    color: $text-secondary;
+    margin: 0 0 $spacing-03 0;
+  }
+
+  &__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-02;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 0.8125rem;
+    color: $interactive-01;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__raw {
+    margin: $spacing-03 0 $spacing-03 0;
+    padding: $spacing-04 $spacing-05;
+    border-left: 3px solid $interactive-01;
+    background: #ffffff;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.875rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: $text-secondary;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-03;
+    margin-top: $spacing-05;
+    flex-wrap: wrap;
+  }
+
+  &__status {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #8a6d00;
+    background: #fcf4d6;
+    border-radius: 4px;
+    padding: 4px 10px;
+  }
+}
+
+.source-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 2px 8px;
+
+  svg {
+    fill: currentColor;
+  }
+
+  &--slack {
+    color: #4a154b;
+    background: #f4e9f4;
+  }
+
+  &--outlook {
+    color: #0f5bbd;
+    background: #e5f0fb;
+  }
+}
+
+// Made with Bob

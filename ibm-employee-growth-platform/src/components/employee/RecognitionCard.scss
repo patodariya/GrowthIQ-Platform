@@ -1,0 +1,147 @@
+@import '../../styles/variables';
+
+.recognition-card {
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $spacing-05;
+  }
+
+  &__title {
+    color: $text-primary;
+    margin: 0;
+  }
+
+  &__points-total {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #0043ce;
+    background: #edf5ff;
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  &__loading,
+  &__empty {
+    font-size: 0.8125rem;
+    color: $text-secondary;
+    margin: 0;
+    padding: $spacing-04 0;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: $spacing-04;
+    margin-top: $spacing-03;
+    border-top: 1px solid $border-subtle-01;
+  }
+
+  &__count {
+    font-size: 0.75rem;
+    color: $text-secondary;
+  }
+
+  &__view-all {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #0043ce;
+    text-decoration: none;
+    margin-left: auto;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.recognition-list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-05;
+}
+
+.recognition-item {
+  padding: $spacing-04 0;
+  border-bottom: 1px solid $border-subtle-01;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: $spacing-03;
+    margin-bottom: $spacing-02;
+  }
+
+  &__avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    color: $text-on-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: $spacing-03;
+    flex: 1;
+  }
+
+  &__from {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: $text-primary;
+  }
+
+  &__date {
+    font-size: 0.75rem;
+    color: $text-secondary;
+    margin-left: auto;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: $spacing-03;
+    margin-bottom: $spacing-02;
+    padding-left: calc(28px + #{$spacing-03});
+  }
+
+  &__type-tag {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    padding: 0.125rem 0.5rem;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  &__points {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #0f62fe;
+  }
+
+  &__message {
+    font-size: 0.8125rem;
+    color: $text-secondary;
+    margin: 0;
+    padding-left: calc(28px + #{$spacing-03});
+    font-style: italic;
+    line-height: 1.45;
+  }
+}
+
+// Made with Bob

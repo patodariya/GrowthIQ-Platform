@@ -1,0 +1,115 @@
+@import '../../styles/variables';
+
+.course-card {
+  padding: $spacing-05;
+  background: #ffffff;
+  border: 1px solid $border-subtle-01;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-04;
+
+  &:hover {
+    border-color: $interactive-01;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &--completed {
+    background: #f4f8ff;
+    border-color: $support-success;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: $spacing-03;
+  }
+
+  &__title-row {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-02;
+    flex: 1;
+  }
+
+  &__check {
+    color: $support-success;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $text-primary;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  &__description {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: $text-secondary;
+    margin: 0;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: $spacing-04;
+    font-size: 0.8125rem;
+    color: $text-helper;
+  }
+
+  &__duration,
+  &__provider {
+    display: flex;
+    align-items: center;
+    gap: $spacing-02;
+  }
+
+  &__progress {
+    padding: $spacing-03;
+    background: $layer-01;
+    border-radius: 4px;
+  }
+
+  &__progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-02;
+  }
+
+  &__progress-label {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: $text-primary;
+  }
+
+  &__progress-value {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: $interactive-01;
+  }
+
+  &__completed {
+    display: flex;
+    align-items: center;
+    gap: $spacing-02;
+    font-size: 0.875rem;
+    color: $support-success;
+    font-weight: 500;
+    padding: $spacing-03;
+    background: #e8f5e9;
+    border-radius: 4px;
+  }
+
+  &__button {
+    margin-top: auto;
+  }
+}
+
+// Made with Bob

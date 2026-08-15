@@ -1,0 +1,103 @@
+@import '../../styles/variables';
+
+.skills-portfolio-chart {
+  width: 100%;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 1rem 0;
+  }
+  
+  &__pie {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+  }
+  
+  &__slice {
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  
+  &__label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    pointer-events: none;
+  }
+  
+  &__legend {
+    margin-top: 0;
+    padding-top: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.5rem;
+  }
+  
+  &__legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem;
+  }
+  
+  &__legend-color {
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  
+  &__legend-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    gap: 0.5rem;
+  }
+  
+  &__legend-name {
+    font-size: 0.75rem;
+    color: #161616;
+    font-weight: 500;
+  }
+  
+  &__legend-percentage {
+    font-size: 0.75rem;
+    color: #525252;
+    font-weight: 600;
+  }
+  
+  &__empty {
+    text-align: center;
+    color: #525252;
+    padding: 2rem;
+    font-size: 1rem;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .skills-portfolio-chart {
+    padding: 0.75rem;
+    
+    &__pie {
+      max-width: 240px;
+    }
+    
+    &__legend {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// Made with Bob

@@ -1,0 +1,121 @@
+@import '../../styles/variables';
+
+.skills-overview {
+  &__header {
+    margin-bottom: $spacing-06;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $text-primary;
+    margin: 0 0 $spacing-02 0;
+  }
+
+  &__subtitle {
+    font-size: 0.875rem;
+    color: $text-secondary;
+    margin: 0;
+
+    strong {
+      color: $text-primary;
+      font-weight: 600;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-06;
+    margin-bottom: $spacing-06;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__chart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__legend {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-05;
+  }
+
+  &__category {
+    padding: $spacing-04;
+    background: $layer-01;
+    border-radius: 8px;
+  }
+
+  &__category-header {
+    display: flex;
+    align-items: center;
+    gap: $spacing-03;
+    margin-bottom: $spacing-03;
+  }
+
+  &__color-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  &__category-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $text-primary;
+    flex: 1;
+  }
+
+  &__category-percent {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $text-secondary;
+  }
+
+  &__skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-02;
+  }
+
+  &__skill-tag {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    background: #ffffff;
+    border: 1px solid $border-subtle-01;
+    border-radius: 4px;
+    color: $text-secondary;
+  }
+
+  &__note {
+    padding: $spacing-04;
+    background: #f4f8ff;
+    border-left: 3px solid $interactive-01;
+    border-radius: 8px;
+
+    p {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      color: $text-secondary;
+      margin: 0;
+
+      &:not(:last-child) {
+        margin-bottom: $spacing-03;
+      }
+
+      strong {
+        color: $text-primary;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+// Made with Bob
